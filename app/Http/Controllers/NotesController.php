@@ -16,7 +16,7 @@ class NotesController extends Controller
     {
         $request->validate([
             'title' => 'required|max:255',
-            'notesContent' => 'required|max:255',
+            'notesContent' => 'required|max:1000',
         ]);
 
         Note::create($request->only('title', 'notesContent'));
@@ -33,7 +33,7 @@ class NotesController extends Controller
     {
         $request->validate([
             'title' => 'required|max:255',
-            'notesContent' => 'required|max:255',
+            'notesContent' => 'required|max:1000',
         ]);
 
         $note->update($request->only('title', 'notesContent'));

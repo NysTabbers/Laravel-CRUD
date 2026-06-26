@@ -16,7 +16,7 @@
                 <div>
                     <textarea name="notesContent" placeholder="Write something..."
                         class="w-full bg-transparent placeholder:text-stone-300 focus:outline-none resize-none {{ $errors->has('notesContent') ? 'text-red-600' : '' }}"
-                        rows="3" maxlength="255" required>{{ old('notesContent') }}</textarea>
+                        rows="3" required>{{ old('notesContent') }}</textarea>
                     @error('notesContent')<p class="text-red-600 text-xs mt-1">{{ $message }}</p>@enderror
                 </div>
                 <div class="flex justify-end">

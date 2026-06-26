@@ -11,21 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
-        });
-
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->index();
             $table->string('title');
-            $table->string('notesContent');
+            $table->text('notesContent');
         });
 
         Schema::create('sessions', function (Blueprint $table) {
